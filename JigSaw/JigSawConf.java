@@ -7,8 +7,9 @@ import java.util.Properties;
 /**
  * Created by mason on 8/17/16.
  * //// TODO: 8/17/16 Switch Conf file operations to JigSawIO file ops
+ * expects file in, individual properties out
  */
-public class JigSawConf {
+public class JigSawConf implements  iJigSaw {
     private Properties properties;
     private JigSawFile jigConf;
     private JigSawFileIO jigio;
@@ -47,6 +48,7 @@ public class JigSawConf {
     
     private void loadPropertyDefaults() {
         //// TODO: 8/17/16 default properties here
+        
     }
     
     
@@ -64,4 +66,63 @@ public class JigSawConf {
     }
     
     
+    @Override
+    public void Connect(iJigSaw piece) {
+        
+    }
+    
+    @Override
+    public void Connect(Iterable<iJigSaw> iterablePieces) {
+        int i = 0;
+    }
+    
+    @Override
+    public void ConnectOut(iJigSaw piece) {
+        int i = 0;
+    }
+    
+    @Override
+    public void ConnectOut(Iterable<iJigSaw> iterablePieces) {
+        int i = 0;
+    }
+    
+    @Override
+    public void ConnectIn(iJigSaw piece) {
+        
+    }
+    
+    @Override
+    public void ConnectIn(Iterable<iJigSaw> iterablePieces) {
+        
+    }
+    
+    @Override
+    public void StartTalking() {
+        
+    }
+    
+    @Override
+    public void StopTalking() {
+        
+    }
+    
+    @Override
+    public void StartListening() {
+        
+    }
+    
+    @Override
+    public void StopListening() {
+        
+    }
+    
+    @Override
+    public void StartThinking() {
+        
+    }
+    
+    @Override
+    public void StopThinking() {
+        
+    }
 }
