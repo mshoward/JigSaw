@@ -1,4 +1,6 @@
-package JigSaw;
+package JigSaw.iJigs;
+
+import JigSaw.JigSawDataNode;
 
 /**
  * Created by mason on 8/17/16.
@@ -21,5 +23,9 @@ public interface iJigSaw {
     
     public void StartThinking();
     public void StopThinking();
+    
+    public void ReceiveData(JigSawDataNode D);
+    public JigSaw.JigSawDataNode SendData();
+    
 }
 

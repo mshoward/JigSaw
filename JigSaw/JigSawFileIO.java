@@ -1,5 +1,7 @@
 package JigSaw;
 
+import JigSaw.iJigs.iJigSaw;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;

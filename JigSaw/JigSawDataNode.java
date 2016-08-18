@@ -47,23 +47,23 @@ public class JigSawDataNode <T>{
     public JigSawDataNode getNext(){
         return next;
     }
-    public JigSawDataNode setNext(JigSawDataNode node){
+    public void setNext(JigSawDataNode node){
         next = node;
     }
     public JigSawDataNode getPrev(){
         return prev;
     }
-    public JigSawDataNode setPrev(JigSawDataNode node){
+    public void setPrev(JigSawDataNode node){
         prev = node;
     }
     
     public void insertBefore(@NotNull JigSawDataNode node){
         if (prev != null){
-            JigSawDataNode oprev = prev;
+            JigSawDataNode oPrev = prev;
             me.setPrev(node);
-            node.setPrev(oprev);
+            node.setPrev(oPrev);
             node.setNext(me);
-            oprev.setNext(node);
+            oPrev.setNext(node);
         }
         else{
             prev = node;

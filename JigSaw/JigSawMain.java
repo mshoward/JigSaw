@@ -1,5 +1,7 @@
 package JigSaw;
 
+import JigSaw.iJigs.iJigSaw;
+
 /**
  * Created by mason on 8/18/16.
  */

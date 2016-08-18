@@ -1,5 +1,6 @@
 package JigSaw;
 
+import JigSaw.iJigs.iJigSaw;
 import org.jetbrains.annotations.NonNls;
 
 import java.io.File;

@@ -1,5 +1,6 @@
 package JigSaw;
 
+import JigSaw.iJigs.*;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
@@ -10,7 +11,7 @@ import java.util.Properties;
 
 /**
  * Created by mason on 8/1/16.
- * //// TODO: 8/17/16 implement JigSaw.iJigSaw
+ * //// TODO: 8/17/16 implement JigSaw.iJigs.iJigSaw
  * //// TODO: 8/17/16 JigSaw.JigSaw IO
  * // // TODO: 8/17/16 JigSaw.JigSaw conf
  * //// TODO: 8/17/16 JigSaw.JigSaw talker
@@ -21,7 +22,7 @@ import java.util.Properties;
 
 
 
-public class JigSaw implements iJigSaw{
+public class JigSawBody implements JigSaw.iJigSaw {
     private String name;
     private String addr;
     private Properties properties;
@@ -33,7 +34,7 @@ public class JigSaw implements iJigSaw{
 
     public List<String> addrs;
 
-    public JigSaw(String _name, String _address, Properties _properties, HttpHandler _handler)
+    public JigSawBody(String _name, String _address, Properties _properties, HttpHandler _handler)
             throws IOException
     {
         threadManager = new JigSawRunner();
@@ -65,32 +66,32 @@ public class JigSaw implements iJigSaw{
     
     
     @Override
-    public void Connect(iJigSaw piece) {
+    public void Connect(JigSaw.iJigSaw piece) {
         
     }
     
     @Override
-    public void Connect(Iterable<iJigSaw> iterablePieces) {
+    public void Connect(Iterable<JigSaw.iJigSaw> iterablePieces) {
         
     }
     
     @Override
-    public void ConnectOut(iJigSaw piece) {
+    public void ConnectOut(JigSaw.iJigSaw piece) {
         
     }
     
     @Override
-    public void ConnectOut(Iterable<iJigSaw> iterablePieces) {
+    public void ConnectOut(Iterable<JigSaw.iJigSaw> iterablePieces) {
         
     }
     
     @Override
-    public void ConnectIn(iJigSaw piece) {
+    public void ConnectIn(JigSaw.iJigSaw piece) {
         
     }
     
     @Override
-    public void ConnectIn(Iterable<iJigSaw> iterablePieces) {
+    public void ConnectIn(Iterable<JigSaw.iJigSaw> iterablePieces) {
         
     }
     
@@ -122,5 +123,15 @@ public class JigSaw implements iJigSaw{
     @Override
     public void StopThinking() {
         
+    }
+    
+    @Override
+    public void ReceiveData(JigSawDataNode D) {
+        
+    }
+    
+    @Override
+    public JigSawDataNode SendData() {
+        return null;
     }
 }

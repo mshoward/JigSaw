@@ -1,5 +1,7 @@
 package JigSaw;
 
+import JigSaw.iJigs.iJigSaw;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -123,6 +125,17 @@ public class JigSawConf implements  iJigSaw {
     
     @Override
     public void StopThinking() {
+        
+    }
+    
+    @Override
+    public JigSawDataNode SendData() {
+        
+        return null;
+    }
+    
+    @Override
+    public void ReceiveData(JigSawDataNode D) {
         
     }
 }
