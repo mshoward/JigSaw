@@ -9,17 +9,18 @@ import java.util.Arrays;
 /**
  * Created by mason on 8/18/16.
  */
-public class JigSawThread<Arg, Ret> implements Runnable {
+class JigSawThread<Arg, Ret> implements Runnable {
     private static String defaultMessageString =
             "This JigSawThread was not actually given something to run.";
-    private Method defaultRunMe = null;
-    private int argCount;
-    private ArrayList<Arg> args;
-    private Arg[] arga;
-    private Ret ret;
-    private boolean JobCompleted = false;
-    private boolean JobFailed = false;
-    private Method runMe;
+    private volatile Method defaultRunMe = null;
+    private volatile int argCount;
+    private volatile ArrayList<Arg> args;
+    private volatile Arg[] arga;
+    private volatile Ret ret;
+    private volatile boolean JobCompleted = false;
+    private volatile boolean JobFailed = false;
+    private volatile Method runMe;
+    private Thread thread;
     public static void defRun(){System.out.println(defaultMessageString);}
     
     public JigSawThread(){
@@ -59,6 +60,18 @@ public class JigSawThread<Arg, Ret> implements Runnable {
     
     @Override
     public void run() {
+        thread = new Thread(new Runnable() {
+            JigSawThread jst;
+            @Override
+            public void run() {this.jst.threading();}
+            Runnable init(JigSawThread _jst){
+                jst = _jst;
+                return this;
+            }
+        }.init(this));
+        thread.run();
+    }
+    private void threading(){
         if (runMe == null){
             try {
                 runMe = this.getClass().getMethod("defRun");
@@ -80,6 +93,5 @@ public class JigSawThread<Arg, Ret> implements Runnable {
         } finally {
             JobCompleted = true;
         }
-        
     }
 }

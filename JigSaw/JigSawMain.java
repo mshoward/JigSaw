@@ -12,7 +12,6 @@ public class JigSawMain implements iJigSaw, Runnable{
     
     public JigSawMain(){
         conf = new JigSawConf();
-        
     }
     
     

@@ -50,9 +50,12 @@ public class JigSawConf implements  iJigSaw {
     
     private void loadPropertyDefaults() {
         //// TODO: 8/17/16 default properties here
+        properties.setProperty("name", "defaultName");
+        properties.getProperty("mode", "BrainPiece");
+    }
+    private void exportPropertyDefaults(){
         
     }
-    
     
     public JigSawConf(Properties props){
         this();
