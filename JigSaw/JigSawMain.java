@@ -8,6 +8,7 @@ import JigSaw.iJigs.iJigSaw;
 public class JigSawMain implements iJigSaw, Runnable{
     
     private JigSawConf conf;
+    private JigSawBody body;
     
     public JigSawMain(){
         conf = new JigSawConf();
@@ -73,6 +74,16 @@ public class JigSawMain implements iJigSaw, Runnable{
     @Override
     public void StopThinking() {
         
+    }
+    
+    @Override
+    public void ReceiveData(JigSawDataNode D) {
+        
+    }
+    
+    @Override
+    public JigSawDataNode SendData() {
+        return null;
     }
     
     @Override

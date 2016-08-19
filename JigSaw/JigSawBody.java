@@ -1,6 +1,7 @@
 package JigSaw;
 
-import JigSaw.iJigs.*;
+import JigSaw.*;
+import JigSaw.iJigs.iJigSaw;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
@@ -22,7 +23,7 @@ import java.util.Properties;
 
 
 
-public class JigSawBody implements JigSaw.iJigSaw {
+public class JigSawBody implements JigSaw.iJigs.iJigSaw {
     private String name;
     private String addr;
     private Properties properties;
@@ -66,32 +67,32 @@ public class JigSawBody implements JigSaw.iJigSaw {
     
     
     @Override
-    public void Connect(JigSaw.iJigSaw piece) {
+    public void Connect(iJigSaw piece) {
         
     }
     
     @Override
-    public void Connect(Iterable<JigSaw.iJigSaw> iterablePieces) {
+    public void Connect(Iterable<iJigSaw> iterablePieces) {
         
     }
     
     @Override
-    public void ConnectOut(JigSaw.iJigSaw piece) {
+    public void ConnectOut(JigSaw.iJigs.iJigSaw piece) {
         
     }
     
     @Override
-    public void ConnectOut(Iterable<JigSaw.iJigSaw> iterablePieces) {
+    public void ConnectOut(Iterable<JigSaw.iJigs.iJigSaw> iterablePieces) {
         
     }
     
     @Override
-    public void ConnectIn(JigSaw.iJigSaw piece) {
+    public void ConnectIn(JigSaw.iJigs.iJigSaw piece) {
         
     }
     
     @Override
-    public void ConnectIn(Iterable<JigSaw.iJigSaw> iterablePieces) {
+    public void ConnectIn(Iterable<JigSaw.iJigs.iJigSaw> iterablePieces) {
         
     }
     
